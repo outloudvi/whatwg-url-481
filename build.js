@@ -21,13 +21,13 @@ function parseLine(str) {
   }
 }
 
-const www = readFileSync('/tmp/test/results.txt', 'utf-8')
+const www = readFileSync('source/results.txt', 'utf-8')
   .split('\n')
   .map((v, i) => {
     if (i % 10000 === 0) console.log(`Parsing WWW ${i} / 1000000`)
     return parseLine(v)
   })
-const nowww = readFileSync('/tmp/test/results.nowww.txt', 'utf-8')
+const nowww = readFileSync('source/results.nowww.txt', 'utf-8')
   .split('\n')
   .map((v, i) => {
     if (i % 10000 === 0) console.log(`Parsing NoWWW ${i} / 1000000`)
